@@ -1,0 +1,28 @@
+#main{
+	width:400px;
+	height:400px;
+	border: 2px solid green;
+}
+#main div {
+	width:50%;
+	height:50%;
+	float:left;
+}
+
+#main div div{
+	height:100%;
+	width: 100%;
+	background-image:url("https://p4.tabor.ru/feed/2017-01-10/15174074/295532_760x500.jpg");
+}
+#first {
+    background-position: 0 0;
+}
+#second {
+    background-position: 100% 0;
+}
+#third{
+    background-position: 0 100%;
+}
+#fourth {
+   background-position: 100% 100%;
+}
