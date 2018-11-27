@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
         $.get("http://aws.random.cat/meow").done(
@@ -15,16 +14,15 @@
                     var width = $(this).width();
                     $("#main").css("height", height);
                     $("#main").css("width", width);
-                    $("#main").css("margin", " 0 auto");
-                 });
+                    $('#main > div > div').css('background-image','url("'+ data.file +'")');
+                    $("head").append("<link rel='stylesheet' type='text/css' href='style.css' />");
+                });
             })
     </script>
 </head>
 <body>
-    <div id="iz">
-    </div>
     <div id="main">
-        <div id="1p" class="em"></div>
+        <div id="1p" class="em first"></div>
         <div id="2p"><div id="second"></div></div>
         <div id="3p"><div id="third"></div></div>
         <div id="4p"><div id="fourth"></div></div>  
