@@ -8,18 +8,28 @@
     <script>
         $.get("http://aws.random.cat/meow").done(
             function(data){
-                $('#main div div').css("background-image", 'url(" ' + data.file + ' ")')
-                console.log(('data.file').clientWidth())
-            }
-            )
+                $('#test').append('<img src="' + data.file + '" id="img">')
+                $("#img").css("display", "none");
+                $("#img").on('load', function() {
+                    var height = $(this).height();
+                    var width = $(this).width();
+                    $("#main").css("height", height);
+                    $("#main").css("width", width);
+                    $("#main").css("margin", " 0 auto");
+                 });
+            })
     </script>
 </head>
 <body>
+    <div id="iz">
+    </div>
     <div id="main">
         <div id="1p" class="em"></div>
         <div id="2p"><div id="second"></div></div>
         <div id="3p"><div id="third"></div></div>
         <div id="4p"><div id="fourth"></div></div>  
+    </div>
+    <div id="test">
     </div>
 </body>
 <script>
@@ -72,6 +82,16 @@
                 $("#4p").removeClass("em");
                 }
         }
+});
+</script>
+<script>
+    $(document).ready(function() {
+        $("#img").on('load', function() {
+            var height = $(this).height();
+            var width = $(this).width();
+            console.log(height,width)
+            alert(27)
+        });
 });
 </script>
 </html>
