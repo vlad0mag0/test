@@ -1,12 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import LoginForm from './src/LoginForm'
+import {SignInWindow} from './src/SignInWindow'
 
 export default class App extends React.Component {
+  state = {
+    mainView: <SignInWindow />
+  }
+
+
+
   render() {
     return (
       <View>
-        <LoginForm />
+        {this.state.mainView}
       </View>
     );
   }

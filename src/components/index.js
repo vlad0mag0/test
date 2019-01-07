@@ -1,2 +1,6 @@
 export * from './Head'
-export * from './Card'
+export * from './Button'
+export * from './Input'
+export * from './Link'
+export * from './Icons'
+export * from './UnderText'

@@ -4,13 +4,24 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "postinstall": ""
   },
   "dependencies": {
     "expo": "^31.0.2",
+    "firebase": "^5.7.2",
+    "firebase-admin": "^6.4.0",
+    "multiparty": "^4.2.1",
     "react": "16.5.0",
-    "react-mdl": "^1.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-native-fs": "^2.13.3",
+    "react-native-loading-spinner-overlay": "^1.0.1",
+    "react-native-material-kit": "^0.5.1",
+    "react-native-material-textfield": "^0.12.0",
+    "react-native-orientation-loading-overlay": "^0.1.4",
+    "react-native-vector-icons": "^6.1.0",
+    "react-spinners": "^0.5.1",
+    "rn-nodeify": "^10.0.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"

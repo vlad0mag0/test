@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "postcrossing-app",
+  "private_key_id": "63ea40a7b22b98d4ac5ee5cac030c16a0dfdc99e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDQp6U9xueaHG2E\nOmyl0p9Q5rLVS21wruZLCZ9IIG38aRfN56fyIwWVVhLptloQnyP95Cqx2BmxXYlP\nBXnS3jU36qkyoUH7fQxydBcgn4HQvpcc/N1IDUoOfb5z3oRSKtfRfgg6lj1kYKnf\n+J15jU6E2eZY3W1MDATKiEZ/A+66VakIyeg9QGa6TT59txePlEji7dLVbg0OFUL9\njdvRaEd/CRq5cyTnQFQ1OvxQZRzPjecE4uetcQ3AlbMSvgvL0DEjc+oB3DwbA664\nErFjOOkqUwMfPycXhZzBasWwgOsfAD2FcdbBRFQz4qwecli5cbTkuHs5n74NSfSB\nOF/Xw3xPAgMBAAECggEAWYas9Do9UlcDOHp29plOCUDLF5CTBwfMQQMCaEid2HDh\nKVRNr6uOMDqrx8KZl0so/r1hAki2EW+QRCsVz7/O9syFR3eAX58ScaNU7wbxhLba\nELKAYXNuRJR4XK/rd3PxgO4CKt0ev0xoZvR94NMcDw2Nc7CiPkBj5+Cb2tC9pA3p\nYBTm1Mxt44QZakpoSlkiHgclj2GA+c15AdU/Pg2ps4jWIZWxLnC/xZMjcoecnAem\nFYhxUr4+k+hgd3jPNjv0Wx4baIGpaPFhv/zO2HXD+rMgqoJkx3QpRTsJEAYKF6eu\n0ILXY9VJhdqN8IXk+I9fkJGCpJ2RnxVSNPUk6HDjMQKBgQD0mk1M/CVQHGEa31ZY\njYkSwikdKgWb+xRK7a5IdkIXmQdau2ObHTU7u+sL6yTuJjsBQqh6dBtY5YeBXNjm\njWeuCnp5iNJYLLZWD1Z2boDkAB8s22kAjJRgEE7F/xdF3pfwhySsflmKBG2oGuZe\nGd0k927BLOPxfJQkV+BvIu5AMQKBgQDaYIvGRyvXsfALnfFKJYzTT8rvnJqydNX7\nS7Ku3sMVSkvSu9XSLIf0fxgYStI9tq58vgybhnVvgACOuj1gEHj1KTPdMkJJLhmv\nFH6Is6D11YLztMHqDqCyTF7smMo7vlha+bBXJtIRta5mbEDhUIzFyWY6viaEwrgR\neu0D1UbkfwKBgQCC5/mq098cSrPlb9WEOus7MNJUG2M5IVyw5Rc7DJ8+hdWbx2H9\nZ9pPh7i5fjUbhzZY7FXCg1UHdH/aydgDO3ZbfJwjYwg/zF4hHMBHTciJPU9x8FL3\nykS2TMP7zxOjfweN4KXN8yj0Zn5RU2QqxGjIGewaUm4DlYqrEKS6ldUwYQKBgQCj\nuvlxi1Eq4qW5AA22axsAIHZmWwN9w63gQSxSgoDACLl64gx6DZtNzLDTHd4uGTcQ\nHiozvYd1NwK0AJ0d1pvqLJ9PPGyIk8D8DSCl/BA14YTSlndBtv/zTuFpAVG3o4p5\ng3YckeW1E4QUFRw8EvnJHazBZGpa5ee+a20jj5gcnwKBgF9fSj1i4xhJ2EbkkdTK\ne+KWvnbguZsbjVGuf1WkGAsKcbNaCOlAN5ah+EOTEy1+TRB7iuIQGzx1AdaahZUo\nSgXvCJ4D7PPHElkmXXip8jNQUzP8DWjEE6QnHE8cz1kCG10VeK0RBNTZiFb8GAJG\nGZtZO6K8cKT4DdybBVmTQ3dG\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-q09ox@postcrossing-app.iam.gserviceaccount.com",
+  "client_id": "104257200678324471880",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-q09ox%40postcrossing-app.iam.gserviceaccount.com"
+}
