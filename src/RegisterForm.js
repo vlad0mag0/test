@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, Text, ImageBackground, Alert} from 'react-native';
 import { Head, Button, Link, Input, Icons,UnderText} from './components';
+import {SignInWindow} from './SignInWindow';
 import { Spinner } from 'native-base';
 import * as firebase from 'firebase';
 
@@ -27,7 +28,7 @@ class RegisterForm extends Component{
    password:'',
    error: '',
    loading: false,
-   mainView: {props.stateApp} ,
+   mainView: this.props.stateApp ,
    buttonContent: <Text style={{color:'#33B5E5', fontSize: 16}}>Sign Up</Text>
  }
 
@@ -51,7 +52,9 @@ onPressSignUpButton(){
      this.setState({
        buttonContent: <Text style={{color:'#33B5E5', fontSize: 16}}>Sign Up</Text>
      })
-     console.log(this.state.mainView)
+     this.setState({
+       mainView: <SignInWindow />
+     })
     })
 }
 

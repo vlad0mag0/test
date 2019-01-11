@@ -4,7 +4,7 @@ import {SignInWindow} from './src/SignInWindow'
 
 export default class App extends React.Component {
   state = {
-    mainView: <SignInWindow stateApp = {state.mainView} />
+    mainView: <SignInWindow stateApp = {this.mainView} />
   }
 
 
