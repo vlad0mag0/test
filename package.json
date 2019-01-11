@@ -12,6 +12,7 @@
     "firebase": "^5.7.2",
     "firebase-admin": "^6.4.0",
     "multiparty": "^4.2.1",
+    "native-base": "^2.10.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-fs": "^2.13.3",

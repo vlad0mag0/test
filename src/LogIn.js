@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, Text, ImageBackground} from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, StatusBar} from 'react-native';
 import { Head, Button, Link, Input, Icons} from './components';
+
+
 
 
 class LogIn extends Component{
@@ -28,7 +30,7 @@ class LogIn extends Component{
             secureTextEntry
             />
 
-              <Button>Log in</Button>
+              <Button></Button>
               <View style = {styles.textBox}>
                 <Text style={styles.textColor}>Not a member?</Text>
                 <Link onPress={this.props.onPress}>Register</Link>

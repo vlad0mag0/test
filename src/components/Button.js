@@ -8,9 +8,9 @@ render(){
   return(
     <View>
       <TouchableOpacity style={styles.buttonStyle} onPress={this.props.onPress}>
-        <Text style={styles.textStyle}>
+        <View style={styles.textStyle}>
           {this.props.children}
-        </Text>
+        </View>
       </TouchableOpacity>
     </View>
   )
@@ -32,11 +32,10 @@ const styles= StyleSheet.create({
   },
   textStyle:{
     alignSelf: 'center',
-    color:'#33B5E5',
     fontSize: 16,
     fontWeight: '300',
-    paddingTop: 10,
-    paddingBottom: 10
+    marginTop: 10,
+    marginBottom:10
   }
 })
 

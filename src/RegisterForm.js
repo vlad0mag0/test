@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, Text, ImageBackground} from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, Alert} from 'react-native';
 import { Head, Button, Link, Input, Icons,UnderText} from './components';
+import { Spinner } from 'native-base';
 import * as firebase from 'firebase';
-import OrientationLoadingOverlay from 'react-native-orientation-loading-overlay';
 
 
 
@@ -26,24 +26,32 @@ class RegisterForm extends Component{
    email:'',
    password:'',
    error: '',
-   loading: false
+   loading: false,
+   mainView: {props.stateApp} ,
+   buttonContent: <Text style={{color:'#33B5E5', fontSize: 16}}>Sign Up</Text>
  }
 
+
+
+
+
 onPressSignUpButton(){
+
   this.setState({
-    loading: true
+    buttonContent: <Spinner color='#33B5E5' style={{height: 23, width:30}}/>
   })
-   const {email, password, username} = this.state
-   firebase.auth().createUserWithEmailAndPassword(email, password).then( () =>
-    {
-      currentUser = firebase.auth().currentUser
-      firebase.database().ref('/'+currentUser.uid).set({
-        email: email,
-        username: username
-      })
-      this.setState({
-        loading: false
-      })
+  const {email, password, username} = this.state
+  firebase.auth().createUserWithEmailAndPassword(email, password).then( () =>
+   {
+     currentUser = firebase.auth().currentUser
+     firebase.database().ref('/'+currentUser.uid).set({
+       email: email,
+       username: username
+     })
+     this.setState({
+       buttonContent: <Text style={{color:'#33B5E5', fontSize: 16}}>Sign Up</Text>
+     })
+     console.log(this.state.mainView)
     })
 }
 
@@ -71,7 +79,7 @@ onPressSignUpButton(){
             secureTextEntry
             />
             <UnderText></UnderText>
-            <Button onPress={this.onPressSignUpButton.bind(this)}>Sign Up</Button>
+            <Button onPress={this.onPressSignUpButton.bind(this)}>{this.state.buttonContent}</Button>
           </View>
       </View>
     )

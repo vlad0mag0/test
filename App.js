@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import {SignInWindow} from './src/SignInWindow'
 
 export default class App extends React.Component {
   state = {
-    mainView: <SignInWindow />
+    mainView: <SignInWindow stateApp = {state.mainView} />
   }
 
 
