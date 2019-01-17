@@ -1,71 +1,63 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert} from 'react-native';
 import BottomNavigation, {
-  FullTab
+  IconTab
 } from 'react-native-material-bottom-navigation';
-import Icon from '@expo/vector-icons/MaterialCommunityIcons'
+import CustomSet from '@expo/vector-icons/CustomSet.js'
 
 export default class App extends React.Component {
 
   tabs = [
     {
       key: 'games',
-      icon: 'gamepad-variant',
-      barColor: '#33B5E5',
-      label: 'Games',
-      pressColor: 'rgba(255, 255, 255, 0.16)'
-    },
-    {
-      key: 'movies-tv',
-      icon: 'movie',
-      label: 'Movies & TV',
-      barColor: '#33B5E5',
-      pressColor: 'rgba(255, 255, 255, 0.16)'
-    },
-    {
-      key: 'music',
-      icon: 'music-note',
-      label: 'Music',
-      barColor: '#33B5E5',
-      pressColor: 'rgba(255, 255, 255, 0.16)'
+      icon: 'letter-with-stamp',
+      barColor: '#fafafa',
+      pressColor: '#e7e7e7'
     }
   ]
-  state = {
-    activeTab: this.tabs[0].key
-  }
 
-  renderIcon = (icon, color) => ({ isActive}) => (
-      <Icon size={24} color={color} name={icon} />
-  )
+
+  renderIcon = (icon, color) => ({isActive}) => {
+       if (isActive) {
+           color = '#528bcc'
+       }
+       return <CustomSet size={24} color={color} name={icon}/>
+   }
 
   renderTab = ({ tab, isActive }) => (
-    <FullTab
+    <IconTab
       isActive = {isActive}
       key={tab.key}
-      label={tab.label}
-      renderIcon={this.renderIcon(tab.icon, 'red')}
+      renderIcon={this.renderIcon(tab.icon, '#aaaeb3')}
     />
   )
 
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ flex: 1 }}>
-          {/* Your screen contents depending on current tab. */}
+        <View style = {{ flex: 1 }}></View>
+        <View style ={styles.BottomNavigationStyles}>
+          <BottomNavigation
+            onTabPress={(newTab, oldTab) => {
+              this.setState({
+                activeTab: newTab.key,
+               })
+            }
+            }
+            renderTab={this.renderTab}
+            tabs={this.tabs}
+          />
         </View>
-        <BottomNavigation
-          onTabPress={(newTab, oldTab) => {
-            this.setState({
-              activeTab: newTab.key,
-             })
-            this.renderIcon(newTab.icon, 'blue') 
-            this.renderIcon(oldTab.icon, 'white')
-          }
-          }
-          renderTab={this.renderTab}
-          tabs={this.tabs}
-        />
       </View>
     )
   }
 }
+
+const styles= StyleSheet.create({
+  BottomNavigationStyles:{
+    marginTop: 50,
+    shadowOffset:{  width: -10,  height: -10,  },
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
+  }
+})
