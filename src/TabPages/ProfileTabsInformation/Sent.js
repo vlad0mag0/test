@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, ScrollView, Text} from 'react-native';
+import { StyleSheet, View, ScrollView, Text, TouchableOpacity} from 'react-native';
 import Card from './components/Card'
 import {Button} from './../../components/Button'
 import * as firebase from 'firebase';
@@ -45,42 +45,28 @@ class Sent extends Component{
       let row = 1
       let loaded= this.state.loaded //how much cards were loaded
       let loadCardsInRow= [] // cards in row
-      let cards=[] //all cards
+      const cards=[] //all cards
 
       for (row; row < height+1; row++){
         for (card = 1; card < cardsInRow+1; card++){
           image = sentCards[loaded]
-          loadCardsInRow.push(<Card url={image}/>)
+          loadCardsInRow.push(<Card url={image} key={loaded} />)
           loaded+=1
         }
         cards.push(
-          <View style={styles.blockOfCards}> {loadCardsInRow} </View>
+          <View style={styles.blockOfCards} key={'row'+row}>{loadCardsInRow}</View>
         )
       }
 
-        loadCardsInRow=[]
-
-        card=1
-
-      for (card; card < restOfCards + 1; card++ ){
-        image= sentCards[loaded]
-        loadCardsInRow.push(<Card url={image}/>)
-        loaded+=1
-      }
-
-      cards.push(
-        <View style={styles.blockOfCards}> {loadCardsInRow}</View>
-      )
-
-      loadCardsInRow=0
+      a=[
+        <View style={styles.blockOfCards}>[<Card/>,<Card/>,<Card/>]</View>,<View></View>
+    ]
 
       this.setState({
-        loaded: loaded,
-        cards: cards
+        cards: a
       })
-
-    })
-  }
+  })
+}
 
 
   render(){
