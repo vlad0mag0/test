@@ -1,7 +1,8 @@
 import React from 'react';
-import {ActivityIndicator, Button, Clipboard, Image, StyleSheet, Text, View,} from 'react-native';
+import {ActivityIndicator, Button, Clipboard, Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {ImagePicker, Permissions} from 'expo';
 import uuid from 'uuid';
+import CustomSet from './../../CustomSet.js'
 import * as firebase from 'firebase';
 
 console.disableYellowBox = true;
@@ -45,25 +46,31 @@ export default class PhotoLoad extends React.Component {
         let image = this.state.image;
 
         return (
-            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                {image ? null : (
-                    <Text
-                        style={{
-                            fontSize: 20,
-                            marginBottom: 20,
-                            textAlign: 'center',
-                            marginHorizontal: 15,
-                        }}>
-                        здесь появится картинка после загрузки
-                    </Text>
-                )}
-
-                {this.state.uploadButton}
-                {this.state.makePhotoButton}
+          <View>
+                  {image ? null : (
+                    <TouchableOpacity style = {
+                      {
+                      alignItems: 'center',
+                      borderRadius: 7,
+                      shadowColor: '#000',
+                      shadowOpacity: 0.2,
+                      shadowRadius: 7,
+                      elevation: 3,
+                      backgroundColor: 'white',
+                      width: 105,
+                      height: 67,
+                      marginLeft: 26,
+                    }
+                    }
+                    onPress={() => {this._pickImage()}} >
+                      <CustomSet size= {40} color='black' name= 'cloud-upload' />
+                      <Text> Upload image </Text>
+                    </TouchableOpacity>
+                  )}
 
                 {this._maybeRenderImage()}
                 {this._maybeRenderUploadingOverlay()}
-            </View>
+        </View>
         );
     }
 
@@ -92,47 +99,30 @@ export default class PhotoLoad extends React.Component {
         }
 
         return (
-            <View
-                style={{
-                    marginTop: 30,
-                    width: 300,
-                    borderRadius: 3,
-                    elevation: 2,
-                }}>
-                <View
-                    style={{
-                        borderTopRightRadius: 3,
-                        borderTopLeftRadius: 3,
-                        shadowColor: 'rgba(0,0,0,1)',
-                        shadowOpacity: 0.2,
-                        shadowOffset: {width: 4, height: 4},
-                        shadowRadius: 5,
-                        overflow: 'hidden',
-                    }}>
-                    <Image source={{uri: image}} style={{width: 105, height: 67}}/>
-                </View>
-
-                <Text
-                    style={{paddingVertical: 10, paddingHorizontal: 10}}>
-                    {image}
-                </Text>
-            </View>
+          <View
+          style = {
+            {
+            alignItems: 'center',
+            shadowColor: '#000',
+            shadowOpacity: 0.2,
+            borderRadius: 7,
+            shadowRadius: 7,
+            elevation: 3,
+            width: 105,
+            height: 67,
+            marginLeft: 26,
+          }
+          }
+          >
+            <Image
+            source={{uri: image}} style={{width: 105, height: 67, borderRadius: 7}}/>
+          </View>
         );
     };
 
-afterLoadActions(url){
-  let sent = this.state.sent
-  firebase.database().ref('Users/TmVvm3mUyabp2lrQEaHMNQc6qKX2').update({
-    sent: sent + 1
-  })
-  firebase.database().ref('Users/TmVvm3mUyabp2lrQEaHMNQc6qKX2/postcards/Sent/'+ (sent+1) ).update({
-    url: url
-  })
-  this.setState({
-    sent: sent+1
-  })
-}
+    afterLoading(){
 
+  }
 
     _handleImagePicked = async pickerResult => {
         try {
@@ -140,16 +130,21 @@ afterLoadActions(url){
             if (!pickerResult.cancelled) {
                 let uploadUrl = await uploadImageAsync(pickerResult.uri);
                 this.setState({image: uploadUrl});
+                this.afterLoading()
             }
         } catch (e) {
             console.log(e);
             alert('Upload failed, sorry :(');
         } finally {
             this.setState({uploading: false});
-            {this.afterLoadActions(this.state.image)}
         }
     };
 }
+
+styles= StyleSheet.create({
+  imageStyles:{
+  }
+})
 
 async function uploadImageAsync(uri) {
     // Why are we using XMLHttpRequest? See:

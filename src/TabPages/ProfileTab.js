@@ -8,10 +8,9 @@ import Sent from './ProfileTabsInformation/Sent'
 import Received from './ProfileTabsInformation/Received'
 
 
-class RequestAdress extends Component {
+class ProfileTab extends Component {
 
 state = {
-      ui: 'TmVvm3mUyabp2lrQEaHMNQc6qKX2',
       selectedTab: 0,
       fontLoaded: false,
       tabsOfProfile: <About text={this.props.aboutText}/>,
@@ -37,13 +36,13 @@ async componentDidMount() {
 
     if (selectedTab === 1){
       this.setState({
-        tabsOfProfile: <Sent sent={this.props.sent}/>
+        tabsOfProfile: <Sent sent={this.props.sent} uid = {this.props.uid}/>
       })
     }
 
     if (selectedTab === 2){
       this.setState({
-        tabsOfProfile: <Received/>
+        tabsOfProfile: <Received received = {this.props.received} uid={this.state.uid}/>
       })
     }
  };
@@ -54,7 +53,7 @@ async componentDidMount() {
       return(
         <View>
           <View style={styles.containerOfHeaderText}>
-              <Text style={styles.headerText}>Me</Text>
+              <Text style={styles.headerText}>{this.props.headerText}</Text>
           </View>
           <View style={styles.headerOfProfile}>
               <View style={styles.postcardsText}>
@@ -83,7 +82,7 @@ async componentDidMount() {
                     textAlign: 'center'
                 }}
                   >
-                  {this.props.adress}
+                  hello
                   </Text>
                 </View>
               </View>
@@ -164,4 +163,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default RequestAdress
+export default ProfileTab

@@ -40,8 +40,8 @@ onPressLike(){
 
 const styles= StyleSheet.create({
   cardStyles:{
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 8,
+    marginRight: 8,
     marginTop: 17,
     marginBottom: 0,
     borderRadius: 7,
